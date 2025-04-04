@@ -30,12 +30,11 @@ jobs:
       # Runs a set of commands using the runner's shell
       - name: Upload package
         env:
-          PROJECTID: ${{ secrets.PROJECTID }}
-          AUTH: ${{ secrets.AUTH }}
           URL: "https://ia.es.deloitte.com/Monolith/"
           COOKIE: ${{ secrets.COOKIE }}
+          COOKIE_INIT: ${{ secrets.COOKIE_INIT}}
         run: |
-          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
             -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
           echo -e "\n\n\n${INSIGHTID}\n\n" 
