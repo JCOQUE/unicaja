@@ -36,9 +36,9 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
         run: |
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-            -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') \
+            -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
-          echo "$INSIGHTID
+          echo "$INSIGHTID" 
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
             -H "Content-Type: application/x-zip-compressed" -F "file=@Archive.zip"
