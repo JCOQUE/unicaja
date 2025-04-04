@@ -36,22 +36,24 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
         run: |
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-            -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID')
+            -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') \
+          
+          echo "$INSIGHTID
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
             -H "Content-Type: application/x-zip-compressed" -F "file=@Archive.zip"
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=UploadEngine(filePath=["@Archive.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=GetEngineMetaValues(engineTypes=["MODEL"], metaKeys=["tag","domain"]);&insightId='"$INSIGHTID"
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/auth/project/setProjectPortal" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/auth/project/setProjectPortal" \
             -d 'expression=MyEngines(metaKeys=["tag","domain","data classification","data restrictions","description"], metaFilters=[{}], filterWord=[""], onlyFavorites=[true], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl-i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=MyEngines(metaKeys=["tag","domain","data classification","data restrictions","description"], metaFilters=[{}], filterWord=[""], userT=[true], engineTypes=["MODEL"], offset=[0], limit=[15]);&insightId='"$INSIGHTID"
 
-          curl -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=GetEngineMetaValues(engineTypes=["MODEL"], metaKeys=["tag","domain","data classification","data restrictions"]);&insightId='"$INSIGHTID"
