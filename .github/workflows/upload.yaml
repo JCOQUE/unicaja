@@ -38,7 +38,7 @@ jobs:
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
-          echo "$INSIGHTID" 
+          echo -e "\n\n\n$INSIGHTID\n\n" 
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
             -H "Content-Type: application/x-zip-compressed" -F "file=@Archive.zip"
@@ -52,7 +52,7 @@ jobs:
           curl -i -k -X POST -b "$COOKIE" "$URL/api/auth/project/setProjectPortal" \
             -d 'expression=MyEngines(metaKeys=["tag","domain","data classification","data restrictions","description"], metaFilters=[{}], filterWord=[""], onlyFavorites=[true], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
-          curl-i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
             -d 'expression=MyEngines(metaKeys=["tag","domain","data classification","data restrictions","description"], metaFilters=[{}], filterWord=[""], userT=[true], engineTypes=["MODEL"], offset=[0], limit=[15]);&insightId='"$INSIGHTID"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
