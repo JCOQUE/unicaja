@@ -1,0 +1,42 @@
+name: Upload
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+      # Runs a single command using the runners shell
+      - name: Create package
+        run: cd src && zip -r ../Archive.zip . && cd ..
+      # Runs a set of commands using the runners shell
+      - name: Upload package
+        env:
+          PROJECTID:  ${{ secrets.PROJECTID }}
+          AUTH: ${{ secrets.AUTH }}
+          URL: "https://workshop.cfg.deloitte.com/cfg-ai-dev/Monolith"
+          COOKIE: "gcplb-cfg-ai-dev=1739196962.53.37.871984|31f0505646dcc90335a4e952bc6a058f; Expires=Wed, 12-Feb-25 14:16:01 GMT; Max-Age=172800; Path=/; Secure; HttpOnly"
+        run: |
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/engine/runPixel" -d "expression=GetAppBlocksJson(project=[\"$PROJECTID\"]);&insightId=new" | jq -r '.insightID')
+          curl -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID&projectId=$PROJECTID&path=version/assets/" -H "Content-Type: multipart/form-data" -F "file=@Archive.zip"
+          curl -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/engine/runPixel" -d "expression=UnzipFile(filePath=[\"version/assets/Archive.zip\"], space=[\"${PROJECTID}\"]);&insightId=${INSIGHTID}"
+          curl -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/engine/runPixel" -d "expression=ReloadInsightClasses(\"$PROJECTID\");&insightId=$INSIGHTID"
+          curl -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/auth/project/setProjectPortal" -d "projectId=$PROJECTID&hasPortal=true&projectId=public"
+          curl -k -X POST -b "$COOKIE" -u "$AUTH" "$URL/api/engine/runPixel" -d "expression=PublishProject(\"$PROJECTID\",release=true);&insightId=$INSIGHTID"
