@@ -25,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create package
-        run: sudo apt update && sudo apt install zip -y && sudo apt-update && sudo apt install curl -y && src && zip -r ../Archive.zip . && cd ..
+        run: sudo apt update && sudo apt install zip -y && sudo apt install curl -y && cd src && zip -r ../Archive.zip . && cd ..
 
       # Runs a set of commands using the runner's shell
       - name: Upload package
