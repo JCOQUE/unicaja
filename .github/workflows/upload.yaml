@@ -39,7 +39,7 @@ jobs:
             -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
           echo -e "\n\n\n$INSIGHTID\n\n" 
-
+          echo -e "\n\n\nHOLAAAAA\n\n"
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
             -H "Content-Type: application/x-zip-compressed" -F "file=@Archive.zip"
 
