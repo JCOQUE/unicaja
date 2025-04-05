@@ -38,18 +38,10 @@ jobs:
           curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
               -d 'expression=GetUserInfo();&insightId=new'
 
-          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel"               -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
-          
-          echo -e "\n\n\1\n\n"
-          echo -e "\n\n\n$COOKIE\n\n"
-          echo -e "\n\n\2\n\n" 
-          echo -e "\n\n\n$COOKIE_INIT\n\n" 
-          echo -e "\n\n\3\n\n"
-          echo -e "curl -s -k -X POST -b \"$COOKIE_INIT\" \"$URL/api/engine/runPixel\" \
-            -d 'expression=GetUserInfo();&insightId=new' "
-          echo -e "\n\n\4\n\n"
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
+
           echo -e "\n\n\n$INSIGHTID\n\n" 
-          echo -e "\n\n\nHOLAAAAA\n\n"
+         
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -F "file=@Archive.zip"
 
