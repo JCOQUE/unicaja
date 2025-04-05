@@ -32,13 +32,9 @@ jobs:
         env:
           URL: "https://ia.es.deloitte.com/Monolith/"
           COOKIE: ${{ secrets.COOKIE }}
-          COOKIE_INIT: ${{ secrets.COOKIE_INIT}}
         run: |
 
-          curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
-              -d 'expression=GetUserInfo();&insightId=new'
-
-          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
