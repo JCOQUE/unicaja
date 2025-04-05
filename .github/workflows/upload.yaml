@@ -39,7 +39,8 @@ jobs:
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
           echo "curl -i -k -X POST -b \"$COOKIE\" \"$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID\" -F \"file=@Archive.zip\""
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -F "file=@Archive.zip"
+
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Accept:application/json, text/plain, */*" -H "Accept-Encoding:gzip, deflate, br, zstd" -H "Content-Type:application/x-www-form-urlencoded" -F "file=@Archive.zip"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["@Archive.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
@@ -50,3 +51,4 @@ jobs:
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=MyEngines( metaKeys = ["tag","domain","data classification","data restrictions","description"] , metaFilters = [ {} ] , filterWord=[""], userT = [true], engineTypes=['MODEL'],  offset=[0], limit=[15]) ;&insightId='"$INSIGHTID"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetEngineMetaValues( engineTypes=['MODEL'],  metaKeys = ["tag","domain","data classification","data restrictions"] ) ;&insightId='"$INSIGHTID"
+
