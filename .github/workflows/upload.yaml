@@ -25,7 +25,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create package
-        run: sudo apt update && sudo apt install zip -y && sudo apt install curl -y  && sudo apt install jq -y && cd src && unzip *.zip && rm *.zip && zip -r ../Archive.zip . && cd ..
+        run: sudo apt update && sudo apt install zip -y && sudo apt install curl -y  && sudo apt install jq -y && cd src && pwd && unzip *.zip && rm *.zip && zip -r ../Archive.zip . && cd ..
 
       # Runs a set of commands using the runner's shell
       - name: Upload package
@@ -41,6 +41,14 @@ jobs:
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
             -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
+          echo -e "\n\n\1\n\n"
+          echo -e "\n\n\n$COOKIE\n\n"
+          echo -e "\n\n\2\n\n" 
+          echo -e "\n\n\n$COOKIE_INIT\n\n" 
+          echo -e "\n\n\3\n\n"
+          echo -e "curl -s -k -X POST -b \"$COOKIE_INIT\" \"$URL/api/engine/runPixel\" \
+            -d 'expression=GetUserInfo();&insightId=new' "
+          echo -e "\n\n\4\n\n"
           echo -e "\n\n\n$INSIGHTID\n\n" 
           echo -e "\n\n\nHOLAAAAA\n\n"
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" \
