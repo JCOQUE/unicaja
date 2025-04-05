@@ -40,7 +40,9 @@ jobs:
          
           echo "curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Accept-Encoding:gzip, deflate, br, zstd" -H "Content-Type:application/x-www-form-urlencoded" -F \"file=@Archive.zip\""
 
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:application/zip" --data-binary "file=@Archive.zip"
+          RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@Archive.zip")
+
+          echo -e "\n\n$RESPONSE\n\n"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["@Archive.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
