@@ -30,7 +30,7 @@ jobs:
       # Runs a set of commands using the runner's shell
       - name: Upload package
         env:
-          URL: "https://ia.es.deloitte.com/Monolith/"
+          URL: "https://ia.es.deloitte.com/Monolith"
           COOKIE: ${{ secrets.COOKIE }}
         run: |
 
