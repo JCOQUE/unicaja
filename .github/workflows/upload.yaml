@@ -34,12 +34,10 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
         run: |
 
-          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
-          echo "curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Accept-Encoding:gzip, deflate, br, zstd" -H "Content-Type:application/x-www-form-urlencoded" -F \"file=@Archive.zip\""
-
           RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@Archive.zip")
 
           echo -e "\n\n$RESPONSE\n\n"
