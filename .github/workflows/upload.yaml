@@ -38,7 +38,7 @@ jobs:
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
-
+          echo "curl -i -k -X POST -b \"$COOKIE\" \"$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID\" -F \"file=@Archive.zip\""
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -F "file=@Archive.zip"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["@Archive.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
