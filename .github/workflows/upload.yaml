@@ -38,7 +38,7 @@ jobs:
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
-          echo "curl -i -k -X POST -b \"$COOKIE\" \"$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID\" -F \"file=@Archive.zip\""
+          echo "curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Accept-Encoding:gzip, deflate, br, zstd" -H "Content-Type:application/x-www-form-urlencoded" -F \"file=@Archive.zip\""
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Accept-Encoding:gzip, deflate, br, zstd" -H "Content-Type:application/x-www-form-urlencoded" -F "file=@Archive.zip"
 
