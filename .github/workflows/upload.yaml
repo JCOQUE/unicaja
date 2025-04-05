@@ -38,8 +38,7 @@ jobs:
           curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
               -d 'expression=GetUserInfo();&insightId=new'
 
-          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "$URL/api/engine/runPixel" \
-            -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
+          INSIGHTID=$(curl -s -k -X POST -b "$COOKIE_INIT" "https://ia.es.deloitte.com/Monolith/api/engine/runPixel"               -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
           
           echo -e "\n\n\1\n\n"
           echo -e "\n\n\n$COOKIE\n\n"
