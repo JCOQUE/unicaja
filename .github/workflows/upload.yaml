@@ -35,7 +35,7 @@ jobs:
          zip -r "../$ZIP_NAME" . &&
          cd .. 
 
-      # Runs a set of commands using the runner's shell 
+      # Runs a set of commands using the runner's shell   
       - name: Upload package
         env:
           URL: "https://ia.es.deloitte.com/Monolith"
@@ -46,7 +46,7 @@ jobs:
           ZIP_NAME=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1 | sed 's|^\./||')
           ENGINEID=$(echo "$ZIP_NAME" | cut -d'_' -f3 | cut -d'.' -f1)
 
-          RESP=$(curl -s -k -X POST "$URL/api/config" -H "Cookie:monolith=EFB38F47B8245DNU51A42DDE43")
+          RESP=$(curl -s -k -X POST "$URL/api/config" -H "Cookie:monolith=EFB38F47B8245DNU51A42DDE43;Path=/Monolith; HttpOnly")
 
           echo -e "\n\n\n $RESP\n\n\n"
 
