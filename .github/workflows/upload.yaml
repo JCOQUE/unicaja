@@ -54,13 +54,13 @@ jobs:
           echo "" >> cookies.txt  # Add a blank line for readability
           echo "#HttpOnly_ia.es.deloitte.com    FALSE   /Monolith       FALSE   0       monolith    CAC7CF8CE7925FE3B6AF95E633250567" >> cookies.txt
 
-          INSIGHTID=$(curl -s -k -X POST -b cookie.txt "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
+          INSIGHTID=$(curl -s -k -X POST -b cookies.txt "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
           echo -e "\n\nHOLAAA\n\n"
           echo -e "\n\n\n$INSIGHTID\n\n" 
           echo -e "\n\nADIOSS\n\n"
 
-          cat cookie.txt
+          cat cookies.txt
 
 
           
