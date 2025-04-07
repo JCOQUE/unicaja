@@ -46,8 +46,13 @@ jobs:
 
           ls
 
+          ZIP_NAME=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1 | sed 's|^\./||')
+
+          ZIP_NAMES=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1')
+
           echo -e "\n\n\n@./$ZIP_NAME\n\n\n"
-          
+          echo -e "\n\n\n@./$ZIP_NAMES\n\n\n"
+
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
