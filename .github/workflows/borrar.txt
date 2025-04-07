@@ -1,1 +1,326 @@
-monolith=EFBB0BB53884C6B06BF47B51A42DDE43; OneTrustConsentShare_ES=optboxclosed=true&optboxexpiry=2025-03-31T8:33:08.681Z&isGpcEnabled=0&datestamp=Mon+Mar+31+2025+8:40:33+GMT+0200+(Central+European+Summer+Time)&version=202410.1.0&browserGpcFlag=0&isIABGlobal=false&hosts=&consentId=c13df451-c5b3-4648-8cc3-322ec7afe098&interactionCount=1&isAnonUser=1&landingPath=NotLandingPage&AwaitingReconsent=false&groups=1:1,2:0,3:0,4:0&geolocation=ES
+{"adminOnlyDbSetPublic":false,"defaultScriptingLanguage":"R","adminOnlyEngineAddAccess":false,"csrf":false,"insightMetaKeys":[{"display_order":1,"metakey":"description","single_multi":"single","display_options":"textarea"},{"display_values":"CONFIDENTIAL,FOUO,INTERNAL ONLY,IP,PII,PHI,PUBLIC,RESTRICTED","display_order":4,"metakey":"data classification","single_multi":"multi","display_options":"select-box"},{"display_order":0,"metakey":"markdown","single_multi":"single","display_options":"markdown"},{"display_order":3,"metakey":"domain","single_multi":"multi","display_options":"multi-typeahead"},{"display_values":"CONFIDENTIAL ALLOWED,FOUO ALLOWED,INTERNAL ALLOWED,IP ALLOWED,PII ALLOWED,PHI ALLOWED,RESTRICTED ALLOWED","display_order":5,"metakey":"data restrictions","single_multi":"multi","display_options":"select-box"},{"display_order":2,"metakey":"tag","single_multi":"multi","display_options":"multi-typeahead"}],"localDeployment":false,"projectMetaKeys":[{"display_order":1,"metakey":"description","single_multi":"single","display_options":"textarea"},{"display_values":"CONFIDENTIAL,FOUO,INTERNAL ONLY,IP,PII,PHI,PUBLIC,RESTRICTED","display_order":4,"metakey":"data classification","single_multi":"multi","display_options":"select-box"},{"display_order":0,"metakey":"markdown","single_multi":"single","display_options":"markdown"},{"display_order":3,"metakey":"domain","single_multi":"multi","display_options":"multi-typeahead"},{"display_values":"CONFIDENTIAL ALLOWED,FOUO ALLOWED,INTERNAL ALLOWED,IP ALLOWED,PII ALLOWED,PHI ALLOWED,RESTRICTED ALLOWED","display_order":5,"metakey":"data restrictions","single_multi":"multi","display_options":"select-box"},{"display_order":2,"metakey":"tag","single_multi":"multi","display_options":"multi-typeahead"}],"adminOnlyInsightSetPublic":false,"loginDetails":{},"adminOnlyEngineAdd":false,"adminOnlyProjectSetPublic":false,"passwordRequirements":{"daysToLockEmail":14,"requireSpecial":true,"allowUserChangePassword":true,"requireLowerCase":true,"requireNumeric":true,"minPassLength":8,"requireAdminResetForExpiration":false,"passReuseCount":10,"daysToLock":0,"passwordExpirationDays":90,"requireUpperCase":true},"python":true,"anonymousUserUploadData":false,"adminOnlyDbAddAccess":false,"version":{"datetime":"2024-12-4 01:30:42","version":"4.3.0-SNAPSHOT"},"cacheInsightMinutes":-1,"adminOnlyEngineDelete":false,"adminOnlyDbDelete":false,"adminOnlyDbSetDiscoverable":false,"adminOnlyInsightAddAccess":false,"cacheInsightByDefault":true,"file-limit":500,"logins":{},"adminOnlyProjectSetDiscoverable":false,"adminOnlyInsightShare":false,"timeout":120.0,"databaseMetaKeys":[{"display_order":1,"metakey":"description","single_multi":"single","display_options":"textarea"},{"display_values":"CONFIDENTIAL,FOUO,INTERNAL ONLY,IP,PII,PHI,PUBLIC,RESTRICTED","display_order":4,"metakey":"data classification","single_multi":"multi","display_options":"select-box"},{"display_order":0,"metakey":"markdown","single_multi":"single","display_options":"markdown"},{"display_order":3,"metakey":"domain","single_multi":"multi","display_options":"multi-typeahead"},{"display_values":"CONFIDENTIAL ALLOWED,FOUO ALLOWED,INTERNAL ALLOWED,IP ALLOWED,PII ALLOWED,PHI ALLOWED,RESTRICTED ALLOWED","display_order":5,"metakey":"data restrictions","single_multi":"multi","display_options":"select-box"},{"display_order":2,"metakey":"tag","single_multi":"multi","display_options":"multi-typeahead"}],"security":true,"theme":{"THEME_MAP":"{
+  \"homeIntroObj\": {
+    \"homeIntroHtml\": \"\",
+    \"infoCards\": [
+      {
+        \"image\": \"logo\",
+        \"color\": \"blue\",
+        \"description\": \"What %theme.name% is and how to leverage it for intelligent business\",
+        \"title\": \"%theme.name% 101\",
+        \"click\": \"101\"
+      },
+      {
+        \"image\": \"briefcase\",
+        \"color\": \"purple\",
+        \"description\": \"Explore how %theme.name% helps solve real-world business problems\",
+        \"title\": \"Use Cases\",
+        \"click\": \"uses\"
+      }
+    ]
+  },
+  \"materialTheme\": {
+    \"typography\": {
+      \"subtitle2\": {
+        \"letterSpacing\": \"0.1px\",
+        \"fontSize\": \"14px\",
+        \"lineHeight\": \"157%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"500\"
+      },
+      \"subtitle1\": {
+        \"letterSpacing\": \"0.15px\",
+        \"fontSize\": \"16px\",
+        \"lineHeight\": \"175%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\"
+      },
+      \"body2\": {
+        \"letterSpacing\": \"0.17px\",
+        \"fontSize\": \"14px\",
+        \"lineHeight\": \"143%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\"
+      },
+      \"caption\": {
+        \"lineWeight\": \"166%\",
+        \"letterSpacing\": \"0.4px\",
+        \"fontSize\": \"12px\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\"
+      },
+      \"h1\": {
+        \"letterSpacing\": \"-1.5px\",
+        \"fontSize\": \"96px\",
+        \"lineHeight\": \"116.7%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"300\",
+        \"textTransform\": \"none\"
+      },
+      \"h2\": {
+        \"letterSpacing\": \"-0.5px\",
+        \"fontSize\": \"60px\",
+        \"lineHeight\": \"120%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"300\",
+        \"textTransform\": \"none\"
+      },
+      \"h3\": {
+        \"fontSize\": \"48px\",
+        \"lineHeight\": \"116.7%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\",
+        \"textTransform\": \"none\"
+      },
+      \"h4\": {
+        \"letterSpacing\": \"0.25px\",
+        \"fontSize\": \"34px\",
+        \"lineHeight\": \"123.5%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\",
+        \"textTransform\": \"none\"
+      },
+      \"h5\": {
+        \"fontSize\": \"24px\",
+        \"lineHeight\": \"133.4%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"500\",
+        \"textTransform\": \"none\"
+      },
+      \"h6\": {
+        \"letterSpacing\": \"0.15px\",
+        \"fontSize\": \"20px\",
+        \"lineHeight\": \"160%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"500\",
+        \"textTransform\": \"none\"
+      },
+      \"button\": {
+        \"fontWeight\": \"600\",
+        \"textTransform\": \"none\"
+      },
+      \"fontFamily\": \"\\"Inter\\", sans-serif\",
+      \"body1\": {
+        \"letterSpacing\": \"0.15px\",
+        \"fontSize\": \"16px\",
+        \"lineHeight\": \"150%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\"
+      },
+      \"overline\": {
+        \"letterSpacing\": \"1px\",
+        \"fontSize\": \"12px\",
+        \"lineHeight\": \"266%\",
+        \"fontStyle\": \"normal\",
+        \"fontWeight\": \"400\",
+        \"textTransform\": \"uppercase\"
+      }
+    },
+    \"components\": {
+      \"MuiCardHeader\": {},
+      \"MuiCssBaseline\": {},
+      \"MuiAlertTitle\": {},
+      \"MuiCardActions\": {},
+      \"MuiContainer\": {},
+      \"MuiButton\": {},
+      \"MuiCardContent\": {},
+      \"MuiPaper\": {},
+      \"MuiCard\": {}
+    },
+    \"spacing\": 8,
+    \"shape\": {
+      \"borderRadiusLg\": 20,
+      \"borderRadiusSm\": 4,
+      \"borderRadius\": 12,
+      \"borderRadiusNone\": 0,
+      \"borderRadiusCircle\": 64,
+      \"borderRadiusChip\": 64
+    },
+    \"palette\": {
+      \"pink\": {
+        \"100\": \"#FFC0D9\",
+        \"200\": \"#FF97C0\",
+        \"300\": \"#FF6DA6\",
+        \"400\": \"#FF4E90\",
+        \"500\": \"#FF337B\",
+        \"600\": \"#ED2F77\",
+        \"700\": \"#D62C71\",
+        \"800\": \"#C0286C\",
+        \"900\": \"#992263\",
+        \"50\": \"#FFE6F0\"
+      },
+      \"primaryContrast\": {
+        \"100\": \"#C6E4BF\",
+        \"200\": \"#A1D396\",
+        \"300\": \"#7AC36B\",
+        \"400\": \"#5CB649\",
+        \"shadow\": \"#E7F4E5\",
+        \"500\": \"#3EA924\",
+        \"600\": \"#349B1B\",
+        \"700\": \"#26890D\",
+        \"800\": \"#167800\",
+        \"900\": \"#005A00\",
+        \"50\": \"#E7F4E5\"
+      },
+      \"green\": {
+        \"100\": \"#ABE4E0\",
+        \"200\": \"#6FD4CB\",
+        \"300\": \"#07C2B6\",
+        \"400\": \"#00B4A4\",
+        \"500\": \"#00A593\",
+        \"600\": \"#009785\",
+        \"700\": \"#008674\",
+        \"800\": \"#007664\",
+        \"900\": \"#005946\",
+        \"50\": \"#DEF4F3\"
+      },
+      \"error\": {
+        \"light\": \"#FBE9E8\",
+        \"dark\": \"#BF0D02\",
+        \"main\": \"#DA291C\"
+      },
+      \"darkBlue\": {
+        \"100\": \"#C9BCE0\",
+        \"200\": \"#A690CC\",
+        \"300\": \"#8364B8\",
+        \"400\": \"#6944AA\",
+        \"500\": \"#4F249B\",
+        \"600\": \"#471F96\",
+        \"700\": \"#3A188E\",
+        \"800\": \"#2D1286\",
+        \"900\": \"#150578\",
+        \"50\": \"#EAE4F2\"
+      },
+      \"mode\": \"light\",
+      \"secondary\": {
+        \"light\": \"#F2F2F2\",
+        \"dark\": \"#757575\",
+        \"main\": \"#D9D9D9\"
+      },
+      \"success\": {
+        \"light\": \"#EAF2EA\",
+        \"dark\": \"#006500\",
+        \"main\": \"#348700\"
+      },
+      \"background\": {
+        \"default\": \"#FAFAFA\",
+        \"paper\": \"#FFFFFF\"
+      },
+      \"warning\": {
+        \"light\": \"#FDF0E5\",
+        \"dark\": \"#EF8326\",
+        \"main\": \"#FA9F2C\"
+      },
+      \"purple\": {
+        \"100\": \"#DAC9F5\",
+        \"200\": \"#C3A5F0\",
+        \"300\": \"#AA7EEA\",
+        \"400\": \"#975FE4\",
+        \"500\": \"#8340DE\",
+        \"600\": \"#783BD7\",
+        \"700\": \"#6A32CE\",
+        \"800\": \"#5D2BC7\",
+        \"900\": \"#481EB8\",
+        \"50\": \"#F1E9FB\"
+      },
+      \"text\": {
+        \"secondary\": \"#666666\",
+        \"main\": \"#000000\",
+        \"disabled\": \"#9E9E9E\",
+        \"primary\": \"#000000\"
+      },
+      \"primary\": {
+        \"border\": \"#9FCFFF\",
+        \"hover\": \"#F5F9FE\",
+        \"light\": \"#046A38\",
+        \"dark\": \"#86BC25\",
+        \"main\": \"#26890D\",
+        \"selected\": \"#EBF4FE\"
+      },
+      \"info\": {
+        \"light\": \"#22A4FF\",
+        \"dark\": \"#1260DD\",
+        \"main\": \"#0471F0\"
+      }
+    }
+  },
+  \"helpBannerOrder\": [
+    \"documentation\",
+    \"tutorials\",
+    \"privacy-notice\",
+    \"platform-tour\",
+    \"github\",
+    \"feedback\"
+  ],
+  \"backgroundImage\": \"\",
+  \"backgroundImageOpacity\": 0.95,
+  \"helpBannerValues\": {
+    \"feedback\": {
+      \"src\": \"\",
+      \"disabled\": true,
+      \"label\": \"Feedback\"
+    },
+    \"github\": {
+      \"src\": \"\",
+      \"disabled\": true,
+      \"label\": \"Github\"
+    },
+    \"platform-tour\": {
+      \"src\": \"\",
+      \"disabled\": true,
+      \"label\": \"Platform Tour\"
+    },
+    \"tutorials\": {
+      \"src\": \"https://dev.eu.aijumpstart.deloitte.com/docs/category/app-creation-guides\",
+      \"label\": \"Tutorials\"
+    },
+    \"documentation\": {
+      \"src\": \"https://dev.eu.aijumpstart.deloitte.com/docs/\",
+      \"label\": \"Documentation\"
+    },
+    \"privacy-notice\": {
+      \"src\": \"https://www.deloitte.com/global/en/legal/privacy.html\",
+      \"label\": \"Privacy Notice\"
+    }
+  },
+  \"cookiePolicyBannerReact\": \"<div><p><b>This site uses strictly necessary cookies and similar technologies to operate this website and to provide you with a more personalized user experience.</p><p>For more information, please review the <a href=https://cookienotice.deloitte.com/ target=_blank>Cookie policy</a>.</p></div>\",
+  \"visualizationColorPalette\": \"Two\",
+  \"logo\": \"\",
+  \"isHomeIntroImageUrl\": false,
+  \"helpDropdown\": {
+    \"contactUsLink\": \"globalaijumpstartplatform@deloitte.com\",
+    \"contactUsIcon\": \"\",
+    \"contactUsTitle\": \"Email Us\",
+    \"contactUsDescription\": \"\",
+    \"showContactUsHeading\": true,
+    \"descriptionFontSize\": \"regular\",
+    \"showContactUsSection\": true,
+    \"showUserGuideSection\": true,
+    \"isContactUsLinkUrl\": false
+  },
+  \"visualizationBackgroundColor\": \"#FFFFFF\",
+  \"homeIntroImage\": \"\",
+  \"isLogoUrl\": false,
+  \"cookiePolicyOrderReact\": {
+    \"0\": \"Strictly Necessary Cookies\",
+    \"1\": \"Performance Cookies\",
+    \"2\": \"Functional Cookies\",
+    \"3\": \"Targeting or Advertising Cookies\"
+  },
+  \"cookiePoliciesReact\": {
+    \"Performance Cookies\": \"These cookies collect information about how visitors use our site, such as which pages are used most often.  The data collected is used to improves the sites performance and ensure a smooth user experience.  All information gathered by these cookies is aggregated and anonymous\",
+    \"Targeting or Advertising Cookies\": \"We may use these cookies to deliver advertisements that are more relevant to your interests. They may also limit the number of times you see an ad and help measure the effectiveness of advertising campaigns. These cookies track your browsing habits to understand your interests.\",
+    \"Functional Cookies\": \"Functional cookies allow the website to remember choices you make (such as language preference or region) and provide enhanced, more personalized features. These cookies may also be used to remember changes you have made to the text size, fonts, and other parts of the webiste that you can customize.\",
+    \"Strictly Necessary Cookies\": \"These cookies are essential for you to browse the website and use its features, such as accessing secure areas. Without these cookies, services like LLM usage or secure logins cannot be provided.\"
+  },
+  \"isLoginImageUrl\": true,
+  \"loginAndSignupTextCustomHtml\": \"\",
+  \"loginCenterHTML\": \"\",
+  \"loginImage\": \"\",
+  \"termsHeaderReact\": \"Attention\",
+  \"cookiePolicyMessageReact\": \"We use cookies and similar technologies to improve your experience, personalize content, and analyze usage patterns on this website. By using our services, you agree to the use of cookies as described in this policy.\",
+  \"homeLeftNavItems\": {},
+  \"cookiePolicyModalBodyReact\": \"<!DOCTYPE html>\r\n<html lang=\\"en\\">\r\n<head>\r\n  <meta charset=\\"UTF-8\\">\r\n  <meta name=\\"viewport\\" content=\\"width=device-width, initial-scale=1.0\\">\r\n  <title>Privacy Information</title>\r\n  <style>\r\n    .accordion {\r\n      background-color: #eee;\r\n      color: #444;\r\n      cursor: pointer;\r\n      padding: 18px;\r\n      width: 100%;\r\n      border: none;\r\n      text-align: left;\r\n      outline: none;\r\n      font-size: 15px;\r\n      transition: 0.4s;\r\n    }\r\n    .active, .accordion:hover {\r\n      background-color: #ccc;\r\n    }\r\n    .panel {\r\n      padding: 0 18px;\r\n      display: block;\r\n      background-color: white;\r\n      overflow: hidden;\r\n    }\r\n    .panel a {\r\n      color: blue;\r\n      text-decoration: underline;\r\n    }\r\n    .sub-section {\r\n      margin-left: 20px;\r\n    }\r\n    .cookie-details {\r\n      margin-left: 40px;\r\n      margin-bottom: 20px;\r\n      border: 1px solid #ddd;\r\n      padding: 10px;\r\n      border-radius: 5px;\r\n      background-color: #f9f9f9;\r\n    }\r\n    .cookie-details p {\r\n      margin: 5px 0;\r\n    }\r\n  </style>\r\n</head>\r\n<body>\r\n  <h2>Privacy Information</h2>\r\n  \r\n  <div class=\\"section\\">\r\n    <h3>Your Privacy</h3>\r\n    <div class=\\"panel\\" id=\\"privacy-panel\\">\r\n      <p>When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies. This information might be about you, your preferences or your device and is mostly used to make the site work as you expect it to. The information does not usually directly identify you, but it can give you a more personalized web experience.</p>\r\n      <p>Because we respect your right to privacy, you can choose not to allow some types of cookies. Click on the different category headings to find out more and change our default settings. However, blocking some types of cookies may impact your experience of the site and the services we are able to offer.</p>\r\n      <p><a href=\\"https://cookienotice.deloitte.com/\\" target=\\"_blank\\">Cookie policy</a></p>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\\"section\\">\r\n    <h3>Strictly Necessary Cookies</h3>\r\n    <div class=\\"panel\\" id=\\"cookies-panel\\">\r\n      <p>These cookies are necessary for the Website to function and cannot be switched off in our systems. They are set in response to actions made by you which amount to a request for services, such as authenticating into the system or managing your privacy preferences, logging in or filling in forms and managing session with the requested service.</p>\r\n      \r\n      <div class=\\"sub-section\\">\r\n        <h4>First Party Cookies</h4>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> cfg-ai</p>\r\n          <p><strong>Host:</strong> www.portal-jumpstart-ascend.deloitteinnovation.us</p>\r\n          <p><strong>Duration:</strong> A few seconds</p>\r\n          <p><strong>Type:</strong> First Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> Cookie from network layer</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> OptanonConsent</p>\r\n          <p><strong>Host:</strong> .portal-jumpstart-ascend.deloitteinnovation.us</p>\r\n          <p><strong>Duration:</strong> 365 Days</p>\r\n          <p><strong>Type:</strong> First Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is set by the cookie compliance solution from OneTrust. It stores information about the categories of cookies the site uses and whether visitors have given or withdrawn consent for the use of each category. This enables site owners to prevent cookies in each category from being set in the users browser, when consent is not given. The cookie has a normal lifespan of one year, so that returning visitors to the site will have their preferences remembered. It contains no information that can identify the site visitor.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> OptanonAlertBoxClosed</p>\r\n          <p><strong>Host:</strong> .portal-jumpstart-ascend.deloitteinnovation.us</p>\r\n          <p><strong>Duration:</strong> 365 Days</p>\r\n          <p><strong>Type:</strong> First Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is set by websites using certain versions of the cookie law compliance solution from OneTrust. It is set after visitors have seen a cookie information notice and in some cases only when they actively close the notice down. It enables the website not to show the message more than once to a user. The cookie has a one year lifespan and contains no personal information.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> monolith</p>\r\n          <p><strong>Host:</strong> www.portal-jumpstart-ascend.deloitteinnovation.us</p>\r\n          <p><strong>Duration:</strong> Session</p>\r\n          <p><strong>Type:</strong> First Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is used for user session management.</p>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\\"sub-section\\">\r\n        <h4>Third Party Cookies</h4>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> fpc</p>\r\n          <p><strong>Host:</strong> login.microsoftonline.com</p>\r\n          <p><strong>Duration:</strong> 1 Month</p>\r\n          <p><strong>Type:</strong> Third Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is set by Microsoft for secure authentication of the user''s login details.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> stsservicecookie</p>\r\n          <p><strong>Host:</strong> login.microsoftonline.com</p>\r\n          <p><strong>Duration:</strong> Session</p>\r\n          <p><strong>Type:</strong> Third Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> Azure Active Directory B2C authentication-related cookie.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> x-ms-gateway-slice</p>\r\n          <p><strong>Host:</strong> login.microsoftonline.com</p>\r\n          <p><strong>Duration:</strong> Session</p>\r\n          <p><strong>Type:</strong> Third Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is set by Microsoft for secure authentication of the user''s login details.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> esctx-xxxxxxxxxxx</p>\r\n          <p><strong>Host:</strong> login.microsoftonline.com</p>\r\n          <p><strong>Duration:</strong> 1 Day</p>\r\n          <p><strong>Type:</strong> Third Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> This cookie is written to help with site security in preventing Cross-Site Request Forgery attacks.</p>\r\n        </div>\r\n        <div class=\\"cookie-details\\">\r\n          <p><strong>Name:</strong> esctx</p>\r\n          <p><strong>Host:</strong> login.microsoftonline.com</p>\r\n          <p><strong>Duration:</strong> Session</p>\r\n          <p><strong>Type:</strong> Third Party</p>\r\n          <p><strong>Category:</strong> Strictly necessary cookies</p>\r\n          <p><strong>Description:</strong> Session context cookie information. For CSRF protection. Binds a request to a specific browser instance so the request can''t be replayed outside the browser. No user information.</p>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n</body>\r\n</html>'\r\n\r\n\",
+  \"name\": \"AI Core\",
+  \"termsReact\": \"<p>Please adhere to the member firm and geography GenAI guardrails and consult your risk team for your specific use case & data usage.</p>\",
+  \"includeNameWithLogo\": true
+}","THEME_NAME":"AI_Core","ID":"8199b972-0bd3-4764-8a1a-d00cd1e4c563","IS_ACTIVE":true},"useLogoutPage":false,"adminOnlyEngineSetPublic":false,"engineMetaKeys":[{"display_order":1,"metakey":"description","single_multi":"single","display_options":"textarea"},{"display_values":"CONFIDENTIAL,FOUO,INTERNAL ONLY,IP,PII,PHI,PUBLIC,RESTRICTED","display_order":4,"metakey":"data classification","single_multi":"multi","display_options":"select-box"},{"display_order":0,"metakey":"markdown","single_multi":"single","display_options":"markdown"},{"display_order":3,"metakey":"domain","single_multi":"multi","display_options":"multi-typeahead"},{"display_values":"CONFIDENTIAL ALLOWED,FOUO ALLOWED,INTERNAL ALLOWED,IP ALLOWED,PII ALLOWED,PHI ALLOWED,RESTRICTED ALLOWED","display_order":5,"metakey":"data restrictions","single_multi":"multi","display_options":"select-box"},{"display_order":2,"metakey":"tag","single_multi":"multi","display_options":"multi-typeahead"}],"adminOnlyEngineSetDiscoverable":false,"showWelcomeBanner":true,"adminOnlyProjectAdd":false,"adminOnlyProjectAddAccess":false,"anonymousUsers":false,"cacheInsightEncrypt":false,"r":true,"defaultFrameType":"GRID","adminOnlyDbAdd":false,"loginsAllowed":{"keycloak":false,"cac":false,"windows_user":false,"salesforce":false,"product_hunt":false,"google_map":false,"twitter":false,"ldap":false,"native":true,"saml":false,"adfs":false,"github":false,"in":false,"ms":true,"surveymonkey":false,"google":false,"siteminder":false,"generic":false,"active_directory":false,"dropbox":false,"api_user":false,"gitlab":false,"registration":false,"linotp":false,"okta":false},"adminOnlyProjectDelete":false,"permissionMappingInteger":{"1":"OWNER","2":"EDIT","3":"READ_ONLY"},"permissionMappingString":{"OWNER":1,"EDIT":2,"READ_ONLY":3}}
