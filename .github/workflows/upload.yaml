@@ -47,7 +47,7 @@ jobs:
           ENGINEID=$(echo "$ZIP_NAME" | cut -d'_' -f3 | cut -d'.' -f1)
 
 
-          curl -i -k -X GET -c cookie.txt "$URL/api/config" 
+          curl -i -s -X GET -c cookie.txt "$URL/api/config" 
 
           INSIGHTID=$(curl -s -k -X POST -b cookie.txt "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
