@@ -25,7 +25,15 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Create package
-        run: sudo apt update && sudo apt install zip -y && sudo apt install curl -y  && sudo apt install jq -y && cd src && pwd && unzip *.zip && rm *.zip && zip -r ../Archive.zip . && cd .. && pwd && ls
+        run: |
+         sudo apt update && sudo apt install zip -y && sudo apt install curl -y  && sudo apt install jq -y  &&
+         cd src &&
+         unzip *.zip &&
+         rm *.zip &&
+         SMSS_NAME=$(find . -maxdepth 1 -type f -name "*.smss" | head -n 1 | sed 's|^\./||') &&
+         ZIP_NAME="${SMSS_NAME%.*}.zip" &&
+         zip -r "../$ZIP_NAME" . &&
+         cd .. 
 
       # Runs a set of commands using the runner's shell
       - name: Upload package
@@ -38,11 +46,11 @@ jobs:
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
-          RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@Archive.zip")
+          RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@${ZIP_NAME}")
 
           echo -e "\n\n$RESPONSE\n\n"
 
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["Archive.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["${ZIP_NAME}"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
 
