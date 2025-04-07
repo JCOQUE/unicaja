@@ -59,7 +59,7 @@ jobs:
          
           echo -e "\n\n$RESPONSE\n\n"
 
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["/$ZIP_NAME"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["/Gemini15PRO__a2fd4e83-33da-4392-8e0d-6a8debdaa059.zip"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
 
