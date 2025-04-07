@@ -46,7 +46,7 @@ jobs:
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
          
-          RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F ""file=@../$ZIP_NAME"")
+          RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@../$ZIP_NAME")
 
          
           echo -e "\n\n$RESPONSE\n\n"
