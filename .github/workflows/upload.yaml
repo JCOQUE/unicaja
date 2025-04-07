@@ -46,7 +46,7 @@ jobs:
           ZIP_NAME=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1 | sed 's|^\./||')
           ENGINEID=$(echo "$ZIP_NAME" | cut -d'_' -f3 | cut -d'.' -f1)
 
-          echo -e "curl -s -k -X GET "$URL/api/config"
+          echo -e "curl -s -k -X GET "$URL/api/config""
 
           RESP=$(curl -s -k -X GET "$URL/api/config" -c cookie.txt)
 
