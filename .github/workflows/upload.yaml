@@ -49,48 +49,43 @@ jobs:
 
           INSIGHTID=$(curl -s -k -X POST -c cookie.txt "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
-          ls 
-
-          cat cookie.txt
-
           sed -i 's/\t0\t/\t10000000000000\t/' cookie.txt
 
-          cat cookie.txt
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
 
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
           -d "expression=DeleteEngine(engine=[\"$ENGINEID\"]);&insightId=$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression= MyEngines(metaKeys = ["tag","domain","data classification","data restrictions","description"], metaFilters = [ {} ] , filterWord=[""], onlyFavorites=[true], engineTypes=['MODEL']);&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression= MyEngines(metaKeys = ["tag","domain","data classification","data restrictions","description"], metaFilters = [ {} ] , filterWord=[""], onlyFavorites=[true], engineTypes=['MODEL']);&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=MyEngines( metaKeys = ["tag","domain","data classification","data restrictions","description"] , metaFilters = [ {} ] , filterWord=[""], userT = [true], engineTypes=['MODEL'],  offset=[0], limit=[15]) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=MyEngines( metaKeys = ["tag","domain","data classification","data restrictions","description"] , metaFilters = [ {} ] , filterWord=[""], userT = [true], engineTypes=['MODEL'],  offset=[0], limit=[15]) ;&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=GetEngineMetaValues( engineTypes=['MODEL'],  metaKeys = ["tag","domain","data classification","data restrictions"] ) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=GetEngineMetaValues( engineTypes=['MODEL'],  metaKeys = ["tag","domain","data classification","data restrictions"] ) ;&insightId='"$INSIGHTID"
          
-          # RESPONSE=$(curl -i -k -X POST -b "$COOKIE" "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@./$ZIP_NAME")
+          RESPONSE=$(curl -i -k -X POST -b cookie.txt "$URL/api/uploadFile/baseUpload?insightId=$INSIGHTID" -H "Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryBxmUip6G9nERARBv" -F "file=@./$ZIP_NAME")
 
          
-          # echo -e "\n\n$RESPONSE\n\n"
+          echo -e "\n\n$RESPONSE\n\n"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d "expression=UploadEngine(filePath=[\"/$ZIP_NAME\"], engineTypes=[\"MODEL\"]);&insightId=$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d "expression=UploadEngine(filePath=[\"/$ZIP_NAME\"], engineTypes=[\"MODEL\"]);&insightId=$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression= MyEngines(metaKeys = ["tag","domain","data classification","data restrictions","description"], metaFilters = [ {} ] , filterWord=[""], onlyFavorites=[true], engineTypes=['MODEL']);&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression= MyEngines(metaKeys = ["tag","domain","data classification","data restrictions","description"], metaFilters = [ {} ] , filterWord=[""], onlyFavorites=[true], engineTypes=['MODEL']);&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=MyEngines( metaKeys = ["tag","domain","data classification","data restrictions","description"] , metaFilters = [ {} ] , filterWord=[""], userT = [true], engineTypes=['MODEL'],  offset=[0], limit=[15]) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=MyEngines( metaKeys = ["tag","domain","data classification","data restrictions","description"] , metaFilters = [ {} ] , filterWord=[""], userT = [true], engineTypes=['MODEL'],  offset=[0], limit=[15]) ;&insightId='"$INSIGHTID"
 
-          # curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
-          # -d 'expression=GetEngineMetaValues( engineTypes=['MODEL'],  metaKeys = ["tag","domain","data classification","data restrictions"] ) ;&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b cookie.txt "$URL/api/engine/runPixel" \
+          -d 'expression=GetEngineMetaValues( engineTypes=['MODEL'],  metaKeys = ["tag","domain","data classification","data restrictions"] ) ;&insightId='"$INSIGHTID"
 
