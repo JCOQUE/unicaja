@@ -48,10 +48,7 @@ jobs:
 
           ZIP_NAME=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1 | sed 's|^\./||')
 
-          ZIP_NAMES=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1)
-
-          echo -e "\n\n\n@./$ZIP_NAME\n\n\n"
-          echo -e "\n\n\n@./$ZIP_NAMES\n\n\n"
+          echo -e "\n\n$ZIP_NAME\n\n\n"
 
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
@@ -62,7 +59,7 @@ jobs:
          
           echo -e "\n\n$RESPONSE\n\n"
 
-          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["${ZIP_NAME}"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
+          curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=UploadEngine(filePath=["$ZIP_NAME"], engineTypes=["MODEL"]);&insightId='"$INSIGHTID"
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetEngineMetaValues( engineTypes=["MODEL"], metaKeys = ["tag","domain"] ) ;&insightId='"$INSIGHTID"
 
