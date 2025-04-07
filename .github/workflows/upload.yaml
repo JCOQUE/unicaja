@@ -55,6 +55,8 @@ jobs:
 
           INSIGHTID=$(curl -s -k -X POST -c cookie.txt "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
+          sed -i.bak -E '/^[^#]/s/^(([^	]*	){4})0/\1100000000000000000000/' cookie.txt
+
           echo -e "\n\n\n$INSIGHTID\n\n" 
 
           curl -i -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" \
