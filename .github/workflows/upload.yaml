@@ -48,7 +48,7 @@ jobs:
 
           ZIP_NAME=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1 | sed 's|^\./||')
 
-          ZIP_NAMES=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1')
+          ZIP_NAMES=$(find . -maxdepth 1 -type f -name "*.zip" | head -n 1)
 
           echo -e "\n\n\n@./$ZIP_NAME\n\n\n"
           echo -e "\n\n\n@./$ZIP_NAMES\n\n\n"
