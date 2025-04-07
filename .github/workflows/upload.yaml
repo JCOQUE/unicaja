@@ -42,6 +42,10 @@ jobs:
           COOKIE: ${{ secrets.COOKIE }}
         run: |
 
+          pwd
+
+          ls
+          
           INSIGHTID=$(curl -s -k -X POST -b "$COOKIE" "$URL/api/engine/runPixel" -d 'expression=GetUserInfo();&insightId=new' | jq -r '.insightID') 
 
           echo -e "\n\n\n$INSIGHTID\n\n" 
