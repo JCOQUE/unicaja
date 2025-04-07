@@ -53,7 +53,7 @@ jobs:
 
           cat cookie.txt
 
-          sed -i 's/^\([^[:space:]]\+\)\([[:space:]]\+\)\([^[:space:]]\+\)\([[:space:]]\+\)\([^[:space:]]\+\)\([[:space:]]\+\)0\([[:space:]]\+\)/\1\2\3\4\5\6 10000000000000\7/' cookie.txt
+          sed -i 's/\t0\t/\t10000000000000\t/' cookie.txt
 
           cat cookie.txt
 
